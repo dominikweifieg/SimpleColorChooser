@@ -1,0 +1,371 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B44DF36A13FD3BDC0075640C /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = B44DF36813FD3BDC0075640C /* marker.png */; };
+		B44DF36B13FD3BDC0075640C /* marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B44DF36913FD3BDC0075640C /* marker@2x.png */; };
+		B44DF37513FD3ED30075640C /* UIColor-Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = B44DF37213FD3ED30075640C /* UIColor-Expanded.m */; };
+		B44DF37613FD3ED30075640C /* UIColor-HSVAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B44DF37413FD3ED30075640C /* UIColor-HSVAdditions.m */; };
+		B44DF37913FD47F20075640C /* current_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = B44DF37713FD47F10075640C /* current_marker.png */; };
+		B44DF37A13FD47F20075640C /* current_marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B44DF37813FD47F20075640C /* current_marker@2x.png */; };
+		B44DF37D13FD49380075640C /* SimpleColorChooserViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B44DF37B13FD49380075640C /* SimpleColorChooserViewController~iPad.xib */; };
+		B4BD69CD13FB92D000BB2C9F /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4BD69CB13FB92D000BB2C9F /* MainWindow-iPad.xib */; };
+		B4D77BEC13FB68460015F766 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D77BEB13FB68460015F766 /* UIKit.framework */; };
+		B4D77BEE13FB68460015F766 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D77BED13FB68460015F766 /* Foundation.framework */; };
+		B4D77BF013FB68460015F766 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D77BEF13FB68460015F766 /* CoreGraphics.framework */; };
+		B4D77BF613FB68460015F766 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B4D77BF413FB68460015F766 /* InfoPlist.strings */; };
+		B4D77BF813FB68460015F766 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D77BF713FB68460015F766 /* main.m */; };
+		B4D77BFC13FB68460015F766 /* SimpleColorChooserAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D77BFB13FB68460015F766 /* SimpleColorChooserAppDelegate.m */; };
+		B4D77BFF13FB68460015F766 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D77BFD13FB68460015F766 /* MainWindow.xib */; };
+		B4D77C0213FB68470015F766 /* SimpleColorChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D77C0113FB68470015F766 /* SimpleColorChooserViewController.m */; };
+		B4D77C0513FB68470015F766 /* SimpleColorChooserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D77C0313FB68470015F766 /* SimpleColorChooserViewController.xib */; };
+		B4D77C1613FB6BD50015F766 /* ArsColorChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D77C1413FB6BD50015F766 /* ArsColorChooserViewController.m */; };
+		B4D77C1713FB6BD50015F766 /* ArsColorChooserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D77C1513FB6BD50015F766 /* ArsColorChooserViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B44DF36813FD3BDC0075640C /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
+		B44DF36913FD3BDC0075640C /* marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker@2x.png"; sourceTree = "<group>"; };
+		B44DF37113FD3ED30075640C /* UIColor-Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor-Expanded.h"; sourceTree = "<group>"; };
+		B44DF37213FD3ED30075640C /* UIColor-Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor-Expanded.m"; sourceTree = "<group>"; };
+		B44DF37313FD3ED30075640C /* UIColor-HSVAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor-HSVAdditions.h"; sourceTree = "<group>"; };
+		B44DF37413FD3ED30075640C /* UIColor-HSVAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor-HSVAdditions.m"; sourceTree = "<group>"; };
+		B44DF37713FD47F10075640C /* current_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = current_marker.png; sourceTree = "<group>"; };
+		B44DF37813FD47F20075640C /* current_marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "current_marker@2x.png"; sourceTree = "<group>"; };
+		B44DF37C13FD49380075640C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/SimpleColorChooserViewController~iPad.xib"; sourceTree = "<group>"; };
+		B4BD69CC13FB92D000BB2C9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		B4D77BE713FB68460015F766 /* SimpleColorChooser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleColorChooser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4D77BEB13FB68460015F766 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B4D77BED13FB68460015F766 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B4D77BEF13FB68460015F766 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B4D77BF313FB68460015F766 /* SimpleColorChooser-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleColorChooser-Info.plist"; sourceTree = "<group>"; };
+		B4D77BF513FB68460015F766 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B4D77BF713FB68460015F766 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B4D77BF913FB68460015F766 /* SimpleColorChooser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleColorChooser-Prefix.pch"; sourceTree = "<group>"; };
+		B4D77BFA13FB68460015F766 /* SimpleColorChooserAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleColorChooserAppDelegate.h; sourceTree = "<group>"; };
+		B4D77BFB13FB68460015F766 /* SimpleColorChooserAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleColorChooserAppDelegate.m; sourceTree = "<group>"; };
+		B4D77BFE13FB68460015F766 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		B4D77C0013FB68460015F766 /* SimpleColorChooserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleColorChooserViewController.h; sourceTree = "<group>"; };
+		B4D77C0113FB68470015F766 /* SimpleColorChooserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleColorChooserViewController.m; sourceTree = "<group>"; };
+		B4D77C0413FB68470015F766 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SimpleColorChooserViewController.xib; sourceTree = "<group>"; };
+		B4D77C1313FB6BD50015F766 /* ArsColorChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArsColorChooserViewController.h; sourceTree = "<group>"; };
+		B4D77C1413FB6BD50015F766 /* ArsColorChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArsColorChooserViewController.m; sourceTree = "<group>"; };
+		B4D77C1513FB6BD50015F766 /* ArsColorChooserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArsColorChooserViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B4D77BE413FB68460015F766 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4D77BEC13FB68460015F766 /* UIKit.framework in Frameworks */,
+				B4D77BEE13FB68460015F766 /* Foundation.framework in Frameworks */,
+				B4D77BF013FB68460015F766 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B4BD69CA13FB92CC00BB2C9F /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				B4BD69CB13FB92D000BB2C9F /* MainWindow-iPad.xib */,
+				B44DF37B13FD49380075640C /* SimpleColorChooserViewController~iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		B4D77BDC13FB68450015F766 = {
+			isa = PBXGroup;
+			children = (
+				B4D77BF113FB68460015F766 /* SimpleColorChooser */,
+				B4D77BEA13FB68460015F766 /* Frameworks */,
+				B4D77BE813FB68460015F766 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B4D77BE813FB68460015F766 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4D77BE713FB68460015F766 /* SimpleColorChooser.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4D77BEA13FB68460015F766 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4D77BEB13FB68460015F766 /* UIKit.framework */,
+				B4D77BED13FB68460015F766 /* Foundation.framework */,
+				B4D77BEF13FB68460015F766 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4D77BF113FB68460015F766 /* SimpleColorChooser */ = {
+			isa = PBXGroup;
+			children = (
+				B4BD69CA13FB92CC00BB2C9F /* iPad */,
+				B4D77C0F13FB6B720015F766 /* ColorChooser */,
+				B4D77BFA13FB68460015F766 /* SimpleColorChooserAppDelegate.h */,
+				B4D77BFB13FB68460015F766 /* SimpleColorChooserAppDelegate.m */,
+				B4D77BFD13FB68460015F766 /* MainWindow.xib */,
+				B4D77C0013FB68460015F766 /* SimpleColorChooserViewController.h */,
+				B4D77C0113FB68470015F766 /* SimpleColorChooserViewController.m */,
+				B4D77C0313FB68470015F766 /* SimpleColorChooserViewController.xib */,
+				B4D77BF213FB68460015F766 /* Supporting Files */,
+			);
+			path = SimpleColorChooser;
+			sourceTree = "<group>";
+		};
+		B4D77BF213FB68460015F766 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B4D77BF313FB68460015F766 /* SimpleColorChooser-Info.plist */,
+				B4D77BF413FB68460015F766 /* InfoPlist.strings */,
+				B4D77BF713FB68460015F766 /* main.m */,
+				B4D77BF913FB68460015F766 /* SimpleColorChooser-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B4D77C0F13FB6B720015F766 /* ColorChooser */ = {
+			isa = PBXGroup;
+			children = (
+				B44DF37713FD47F10075640C /* current_marker.png */,
+				B44DF37813FD47F20075640C /* current_marker@2x.png */,
+				B44DF37113FD3ED30075640C /* UIColor-Expanded.h */,
+				B44DF37213FD3ED30075640C /* UIColor-Expanded.m */,
+				B44DF37313FD3ED30075640C /* UIColor-HSVAdditions.h */,
+				B44DF37413FD3ED30075640C /* UIColor-HSVAdditions.m */,
+				B44DF36813FD3BDC0075640C /* marker.png */,
+				B44DF36913FD3BDC0075640C /* marker@2x.png */,
+				B4D77C1313FB6BD50015F766 /* ArsColorChooserViewController.h */,
+				B4D77C1413FB6BD50015F766 /* ArsColorChooserViewController.m */,
+				B4D77C1513FB6BD50015F766 /* ArsColorChooserViewController.xib */,
+			);
+			path = ColorChooser;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B4D77BE613FB68460015F766 /* SimpleColorChooser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4D77C0813FB68470015F766 /* Build configuration list for PBXNativeTarget "SimpleColorChooser" */;
+			buildPhases = (
+				B4D77BE313FB68460015F766 /* Sources */,
+				B4D77BE413FB68460015F766 /* Frameworks */,
+				B4D77BE513FB68460015F766 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleColorChooser;
+			productName = SimpleColorChooser;
+			productReference = B4D77BE713FB68460015F766 /* SimpleColorChooser.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B4D77BDE13FB68450015F766 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = B4D77BE113FB68450015F766 /* Build configuration list for PBXProject "SimpleColorChooser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B4D77BDC13FB68450015F766;
+			productRefGroup = B4D77BE813FB68460015F766 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B4D77BE613FB68460015F766 /* SimpleColorChooser */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B4D77BE513FB68460015F766 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4D77BF613FB68460015F766 /* InfoPlist.strings in Resources */,
+				B4D77BFF13FB68460015F766 /* MainWindow.xib in Resources */,
+				B4D77C0513FB68470015F766 /* SimpleColorChooserViewController.xib in Resources */,
+				B4D77C1713FB6BD50015F766 /* ArsColorChooserViewController.xib in Resources */,
+				B4BD69CD13FB92D000BB2C9F /* MainWindow-iPad.xib in Resources */,
+				B44DF36A13FD3BDC0075640C /* marker.png in Resources */,
+				B44DF36B13FD3BDC0075640C /* marker@2x.png in Resources */,
+				B44DF37913FD47F20075640C /* current_marker.png in Resources */,
+				B44DF37A13FD47F20075640C /* current_marker@2x.png in Resources */,
+				B44DF37D13FD49380075640C /* SimpleColorChooserViewController~iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B4D77BE313FB68460015F766 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4D77BF813FB68460015F766 /* main.m in Sources */,
+				B4D77BFC13FB68460015F766 /* SimpleColorChooserAppDelegate.m in Sources */,
+				B4D77C0213FB68470015F766 /* SimpleColorChooserViewController.m in Sources */,
+				B4D77C1613FB6BD50015F766 /* ArsColorChooserViewController.m in Sources */,
+				B44DF37513FD3ED30075640C /* UIColor-Expanded.m in Sources */,
+				B44DF37613FD3ED30075640C /* UIColor-HSVAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B44DF37B13FD49380075640C /* SimpleColorChooserViewController~iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B44DF37C13FD49380075640C /* en */,
+			);
+			name = "SimpleColorChooserViewController~iPad.xib";
+			sourceTree = "<group>";
+		};
+		B4BD69CB13FB92D000BB2C9F /* MainWindow-iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4BD69CC13FB92D000BB2C9F /* en */,
+			);
+			name = "MainWindow-iPad.xib";
+			sourceTree = "<group>";
+		};
+		B4D77BF413FB68460015F766 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4D77BF513FB68460015F766 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B4D77BFD13FB68460015F766 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4D77BFE13FB68460015F766 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		B4D77C0313FB68470015F766 /* SimpleColorChooserViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4D77C0413FB68470015F766 /* en */,
+			);
+			name = SimpleColorChooserViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B4D77C0613FB68470015F766 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B4D77C0713FB68470015F766 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B4D77C0913FB68470015F766 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleColorChooser/SimpleColorChooser-Prefix.pch";
+				INFOPLIST_FILE = "SimpleColorChooser/SimpleColorChooser-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B4D77C0A13FB68470015F766 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleColorChooser/SimpleColorChooser-Prefix.pch";
+				INFOPLIST_FILE = "SimpleColorChooser/SimpleColorChooser-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B4D77BE113FB68450015F766 /* Build configuration list for PBXProject "SimpleColorChooser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4D77C0613FB68470015F766 /* Debug */,
+				B4D77C0713FB68470015F766 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4D77C0813FB68470015F766 /* Build configuration list for PBXNativeTarget "SimpleColorChooser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4D77C0913FB68470015F766 /* Debug */,
+				B4D77C0A13FB68470015F766 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B4D77BDE13FB68450015F766 /* Project object */;
+}

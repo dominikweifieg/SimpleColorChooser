@@ -11,19 +11,20 @@
 
 @interface ArsColorChooserViewController(PrivateMethods)
 -(void) setCurrentColorMarker;
+-(void) handleHueGesture:(UIGestureRecognizer *)gestureRecognizer;
+-(void) handleValueGesture:(UIGestureRecognizer *)gestureRecognizer;
 @end
 
 @implementation ArsColorChooserViewController
 
-@synthesize titleLabel;
 @synthesize currentColor;
 @synthesize choosenColor;
+@synthesize hueImage;
+@synthesize hueSelector;
 @synthesize currentColorView;
 @synthesize newColorView;
 @synthesize theColorChooser;
-@synthesize valueLabel;
 @synthesize alphaLabel;
-@synthesize valueSlider;
 @synthesize alphaSlider;
 @synthesize newMarker;
 @synthesize currentMarker;
@@ -32,9 +33,10 @@
 @synthesize colorChosenSelector;
 @synthesize cancelSelector;
 
+@synthesize hue;
 @synthesize value;
+@synthesize saturation;
 @synthesize alpha;
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -66,70 +68,98 @@
 
 #pragma mark - View lifecycle
 
-- (void)setupColorChooserButtons {
-    NSArray *subviews = [NSArray arrayWithArray:self.theColorChooser.subviews];
-    for (UIView *subview in subviews) {
-        [subview removeFromSuperview];
-    }
-    
+-(void) drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx
+{
     CGRect bounds = self.theColorChooser.bounds;
     
-    float hue = 1 / (bounds.size.height / 5);
-    float sat = 1 / (bounds.size.width / 5);
-
-    for (int i = 0; i < bounds.size.height / 5; i++) {
-        for (int j = 0; j < bounds.size.width / 5; j++) {
-            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-            button.backgroundColor = [UIColor colorWithHue:(hue * i) / 1  saturation: (sat * j) / 1 brightness:self.value alpha:self.alpha];
-            [self.theColorChooser addSubview:button];
-            button.frame = CGRectMake(j * 5, i * 5, 5, 5);
-            [button addTarget:self action:@selector(colorChoosen:) forControlEvents:UIControlEventTouchDown | UIControlEventTouchUpInside | UIControlEventTouchDragEnter];
-        }
-    }
-
+    CGColorSpaceRef rgb = CGColorSpaceCreateDeviceRGB();
+    
+    UIColor *startColor = [UIColor colorWithHue:self.hue saturation:1.0 brightness:1.0 alpha:1.0];
+    UIColor *endColor = [UIColor colorWithHue:self.hue saturation:0.0 brightness:1.0 alpha:1.0];
+    
+    CGFloat colors[] =
+    {
+        startColor.red, startColor.green, startColor.blue, 1.0f,
+        endColor.red, endColor.green, endColor.blue, 1.0f,
+    };
+    CGGradientRef gradient = CGGradientCreateWithColorComponents(rgb, colors, NULL, sizeof(colors) / (sizeof(colors[0]) * 4));
+    CGColorSpaceRelease(rgb);
+    
+    CGPoint start = bounds.origin;
+    start.y = 0;
+    CGPoint end = CGPointMake(bounds.origin.x, bounds.size.height);
+    CGContextDrawLinearGradient(ctx, gradient, start, end, kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
+    CGGradientRelease(gradient);
 }
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.alpha = 1.0;//CGColorGetAlpha(self.currentColor.CGColor);
+    self.alpha = CGColorGetAlpha(self.currentColor.CGColor);
+    self.alphaSlider.value = self.alpha;
     
-    self.value = 1.0;
+    self.value = self.currentColor.value;
     
+    self.saturation = self.currentColor.saturation;
     
-    //[self setupColorChooserButtons];
-
+    self.hue = self.currentColor.hue;
     
+    CALayer *colorChooserLayer = [[CALayer alloc] init];
+    
+    [self.theColorChooser.layer addSublayer:colorChooserLayer];
+    colorChooserLayer.frame = CGRectMake(0, 0, self.theColorChooser.layer.bounds.size.width, self.theColorChooser.layer.bounds.size.height);
+    colorChooserLayer.delegate = self;
+    [colorChooserLayer setNeedsDisplay];
+    
+    [colorChooserLayer release];
 }
 
+- (void)positionHueSelector {
+  CGFloat hueY = hueImage.frame.origin.y;
+    CGFloat hueX = (hueImage.frame.origin.x - 6) + (hueImage.frame.size.width * self.hue);
+    CGRect hueSelectorFrame = hueSelector.frame;
+    hueSelectorFrame.origin = CGPointMake(hueX, hueY);
+    hueSelector.frame = hueSelectorFrame;
+
+}
 - (void) viewWillAppear:(BOOL)animated
 {
     self.currentColorView.backgroundColor = self.currentColor;
     self.choosenColor = self.currentColor;
     self.newColorView.backgroundColor = self.choosenColor;
     
-    self.alpha = CGColorGetAlpha(self.currentColor.CGColor);
-    self.alphaSlider.value = self.alpha;
-    
-    self.value = self.currentColor.value;
-    self.valueSlider.value = self.value;
+    [self positionHueSelector];
 
-    [self setupColorChooserButtons];
+    
+    UIPanGestureRecognizer *huePanGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleHueGesture:)];
+    [self.hueImage addGestureRecognizer:huePanGestureRecognizer];
+    [huePanGestureRecognizer release];
+    UITapGestureRecognizer *hueTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleHueGesture:)];
+    [self.hueImage addGestureRecognizer:hueTap];
+    [hueTap release];
+    
+    UIPanGestureRecognizer *chooserPanGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleValueGesture:)];
+    [self.theColorChooser addGestureRecognizer:chooserPanGestureRecognizer];
+    [chooserPanGestureRecognizer release];
+    UITapGestureRecognizer *valueTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleValueGesture:)];
+    [self.theColorChooser addGestureRecognizer:valueTap];
+    [valueTap release];
     
     [self setCurrentColorMarker];
 }
 
 - (void)viewDidUnload
 {
-    [self setValueLabel:nil];
     [self setAlphaLabel:nil];
-    [self setValueSlider:nil];
     [self setAlphaSlider:nil];
     [self setNewMarker:nil];
     [self setCurrentMarker:nil];
-    [self setTitleLabel:nil];
     [self setCurrentColorView:nil];
     [self setNewColorView:nil];
+    [self setHueImage:nil];
+    [self setHueSelector:nil];
     [super viewDidUnload];
 
 }
@@ -143,7 +173,6 @@
 -(void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
     [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-    [self setupColorChooserButtons];
     [self setCurrentColorMarker];
 }
 
@@ -157,41 +186,19 @@
     [delegate performSelector:colorChosenSelector withObject:choosenColor];
 }
 
-- (IBAction)valueChanged:(id)sender {
-    self.value = valueSlider.value;
-    [self setupColorChooserButtons];
-}
-
 - (IBAction)alphaChanged:(id)sender {
     self.alpha = alphaSlider.value;
-    [self setupColorChooserButtons];
-}
-
--(void) colorChoosen:(id)sender
-{
-    UIButton *b = (UIButton*) sender;
-    self.choosenColor = b.backgroundColor;
-    self.newColorView.backgroundColor = self.choosenColor;
-    CGPoint position = [self.theColorChooser convertPoint:b.center toView:self.view];
-    [UIView beginAnimations:@"SetNewMarker" context:nil];
-    self.newMarker.center = CGPointMake(position.x, position.y - 20);
-    [UIView commitAnimations];
 }
 
 -(void) setCurrentColorMarker
 {
-    CGRect frame = self.theColorChooser.frame;
+    CGRect frame = self.theColorChooser.bounds;
     
-    float hue = 1 / (frame.size.height / 5);
-    float sat = 1 / (frame.size.width / 5);
-    //find closest posision!
-    float ySteps = self.currentColor.hue / hue;
-    ySteps *= 5;
+    CGFloat x = frame.origin.x + (frame.size.width * self.value);
+    CGFloat y = frame.origin.y + frame.size.height - (frame.size.height * self.saturation);
     
-    float xSteps = self.currentColor.saturation / sat;
-    xSteps *= 5;
     [UIView beginAnimations:@"SetCurrentMarker" context:nil];
-    CGPoint pos = [self.view convertPoint:CGPointMake(xSteps, ySteps - 20) fromView:self.theColorChooser];
+    CGPoint pos = [self.view convertPoint:CGPointMake(x, y - 20) fromView:self.theColorChooser];
     self.currentMarker.center = pos;
     
     if (self.choosenColor == self.currentColor) {
@@ -200,13 +207,62 @@
     [UIView commitAnimations];
 }
 
+-(void) handleHueGesture:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan ||
+        gestureRecognizer.state == UIGestureRecognizerStateChanged ||
+        gestureRecognizer.state == UIGestureRecognizerStateEnded) 
+    {
+        CGPoint p = [gestureRecognizer locationInView:self.hueImage];
+        if (p.x < 0 || p.x >= self.hueImage.bounds.size.width) {
+            return;
+        }
+        self.hue = p.x / self.hueImage.bounds.size.width;
+        [self positionHueSelector];
+        [[[self.theColorChooser.layer sublayers] objectAtIndex:0] setNeedsDisplay];
+        self.choosenColor = [UIColor colorWithHue:self.hue saturation:self.saturation brightness:self.value alpha:self.alpha];
+        self.newColorView.backgroundColor = self.choosenColor;
+    }
+}
+                               
+-(void) handleValueGesture:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan ||
+        gestureRecognizer.state == UIGestureRecognizerStateChanged ||
+        gestureRecognizer.state == UIGestureRecognizerStateEnded) 
+    {
+        CGPoint p = [gestureRecognizer locationInView:self.theColorChooser];
+        if (p.x < 0 || p.x >= self.theColorChooser.bounds.size.width || 
+            p.y < 0 || p.y >= self.theColorChooser.bounds.size.height ) {
+            return;
+        }
+        
+        self.value = p.x / self.theColorChooser.bounds.size.width;
+        self.saturation = 1.0f - (p.y / self.theColorChooser.bounds.size.height);
+        
+        self.choosenColor = [UIColor colorWithHue:self.hue saturation:self.saturation brightness:self.value alpha:self.alpha];
+        self.newColorView.backgroundColor = self.choosenColor;
+        
+        CGRect frame = self.theColorChooser.bounds;
+        
+        CGFloat x = frame.origin.x + (frame.size.width * self.value);
+        CGFloat y = frame.origin.y + frame.size.height - (frame.size.height * self.saturation);
+        
+        [UIView beginAnimations:@"SetCurrentMarker" context:nil];
+        CGPoint pos = [self.view convertPoint:CGPointMake(x, y - 20) fromView:self.theColorChooser];
+        self.newMarker.center = pos;
+        [UIView commitAnimations];
+    }
+}
+                             
 - (void)dealloc {
-    [valueLabel release];
     [alphaLabel release];
-    [valueSlider release];
     [alphaSlider release];
     [newMarker release];
     [currentMarker release];
+    [hueImage release];
+    [hueSelector release];
+    [self.choosenColor release];
     [super dealloc];
 }
 @end

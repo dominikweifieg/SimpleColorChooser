@@ -14,6 +14,15 @@
 		B44DF37913FD47F20075640C /* current_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = B44DF37713FD47F10075640C /* current_marker.png */; };
 		B44DF37A13FD47F20075640C /* current_marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B44DF37813FD47F20075640C /* current_marker@2x.png */; };
 		B44DF37D13FD49380075640C /* SimpleColorChooserViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B44DF37B13FD49380075640C /* SimpleColorChooserViewController~iPad.xib */; };
+		B45C68F4140E0B0B00A0EC62 /* brightness.png in Resources */ = {isa = PBXBuildFile; fileRef = B45C68EE140E0B0B00A0EC62 /* brightness.png */; };
+		B45C68F5140E0B0B00A0EC62 /* brightness@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B45C68EF140E0B0B00A0EC62 /* brightness@2x.png */; };
+		B45C68F6140E0B0B00A0EC62 /* brightness~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = B45C68F0140E0B0B00A0EC62 /* brightness~iPad.png */; };
+		B45C68F7140E0B0B00A0EC62 /* hsv.png in Resources */ = {isa = PBXBuildFile; fileRef = B45C68F1140E0B0B00A0EC62 /* hsv.png */; };
+		B45C68F8140E0B0B00A0EC62 /* hsv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B45C68F2140E0B0B00A0EC62 /* hsv@2x.png */; };
+		B45C68F9140E0B0B00A0EC62 /* hsv~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = B45C68F3140E0B0B00A0EC62 /* hsv~iPad.png */; };
+		B45C68FD140E125E00A0EC62 /* hue_selector.png in Resources */ = {isa = PBXBuildFile; fileRef = B45C68FB140E125E00A0EC62 /* hue_selector.png */; };
+		B45C68FE140E125E00A0EC62 /* hue_selector@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B45C68FC140E125E00A0EC62 /* hue_selector@2x.png */; };
+		B45C690C140E1E8F00A0EC62 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B45C690B140E1E8F00A0EC62 /* QuartzCore.framework */; };
 		B4BD69CD13FB92D000BB2C9F /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4BD69CB13FB92D000BB2C9F /* MainWindow-iPad.xib */; };
 		B4D77BEC13FB68460015F766 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D77BEB13FB68460015F766 /* UIKit.framework */; };
 		B4D77BEE13FB68460015F766 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D77BED13FB68460015F766 /* Foundation.framework */; };
@@ -38,6 +47,15 @@
 		B44DF37713FD47F10075640C /* current_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = current_marker.png; sourceTree = "<group>"; };
 		B44DF37813FD47F20075640C /* current_marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "current_marker@2x.png"; sourceTree = "<group>"; };
 		B44DF37C13FD49380075640C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/SimpleColorChooserViewController~iPad.xib"; sourceTree = "<group>"; };
+		B45C68EE140E0B0B00A0EC62 /* brightness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brightness.png; sourceTree = "<group>"; };
+		B45C68EF140E0B0B00A0EC62 /* brightness@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brightness@2x.png"; sourceTree = "<group>"; };
+		B45C68F0140E0B0B00A0EC62 /* brightness~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brightness~iPad.png"; sourceTree = "<group>"; };
+		B45C68F1140E0B0B00A0EC62 /* hsv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hsv.png; sourceTree = "<group>"; };
+		B45C68F2140E0B0B00A0EC62 /* hsv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hsv@2x.png"; sourceTree = "<group>"; };
+		B45C68F3140E0B0B00A0EC62 /* hsv~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hsv~iPad.png"; sourceTree = "<group>"; };
+		B45C68FB140E125E00A0EC62 /* hue_selector.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hue_selector.png; sourceTree = "<group>"; };
+		B45C68FC140E125E00A0EC62 /* hue_selector@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hue_selector@2x.png"; sourceTree = "<group>"; };
+		B45C690B140E1E8F00A0EC62 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B4BD69CC13FB92D000BB2C9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		B4D77BE713FB68460015F766 /* SimpleColorChooser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleColorChooser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D77BEB13FB68460015F766 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -63,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B45C690C140E1E8F00A0EC62 /* QuartzCore.framework in Frameworks */,
 				B4D77BEC13FB68460015F766 /* UIKit.framework in Frameworks */,
 				B4D77BEE13FB68460015F766 /* Foundation.framework in Frameworks */,
 				B4D77BF013FB68460015F766 /* CoreGraphics.framework in Frameworks */,
@@ -101,6 +120,7 @@
 		B4D77BEA13FB68460015F766 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B45C690B140E1E8F00A0EC62 /* QuartzCore.framework */,
 				B4D77BEB13FB68460015F766 /* UIKit.framework */,
 				B4D77BED13FB68460015F766 /* Foundation.framework */,
 				B4D77BEF13FB68460015F766 /* CoreGraphics.framework */,
@@ -138,6 +158,14 @@
 		B4D77C0F13FB6B720015F766 /* ColorChooser */ = {
 			isa = PBXGroup;
 			children = (
+				B45C68FB140E125E00A0EC62 /* hue_selector.png */,
+				B45C68FC140E125E00A0EC62 /* hue_selector@2x.png */,
+				B45C68EE140E0B0B00A0EC62 /* brightness.png */,
+				B45C68EF140E0B0B00A0EC62 /* brightness@2x.png */,
+				B45C68F0140E0B0B00A0EC62 /* brightness~iPad.png */,
+				B45C68F1140E0B0B00A0EC62 /* hsv.png */,
+				B45C68F2140E0B0B00A0EC62 /* hsv@2x.png */,
+				B45C68F3140E0B0B00A0EC62 /* hsv~iPad.png */,
 				B44DF37713FD47F10075640C /* current_marker.png */,
 				B44DF37813FD47F20075640C /* current_marker@2x.png */,
 				B44DF37113FD3ED30075640C /* UIColor-Expanded.h */,
@@ -210,6 +238,14 @@
 				B44DF37913FD47F20075640C /* current_marker.png in Resources */,
 				B44DF37A13FD47F20075640C /* current_marker@2x.png in Resources */,
 				B44DF37D13FD49380075640C /* SimpleColorChooserViewController~iPad.xib in Resources */,
+				B45C68F4140E0B0B00A0EC62 /* brightness.png in Resources */,
+				B45C68F5140E0B0B00A0EC62 /* brightness@2x.png in Resources */,
+				B45C68F6140E0B0B00A0EC62 /* brightness~iPad.png in Resources */,
+				B45C68F7140E0B0B00A0EC62 /* hsv.png in Resources */,
+				B45C68F8140E0B0B00A0EC62 /* hsv@2x.png in Resources */,
+				B45C68F9140E0B0B00A0EC62 /* hsv~iPad.png in Resources */,
+				B45C68FD140E125E00A0EC62 /* hue_selector.png in Resources */,
+				B45C68FE140E125E00A0EC62 /* hue_selector@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

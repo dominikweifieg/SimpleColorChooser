@@ -70,6 +70,12 @@
 - (IBAction)chooseColor1:(id)sender {
     ArsColorChooserViewController *colorChooser = [[ArsColorChooserViewController alloc] initWithDelegate:self colorChosenSelector:@selector(setBackgroundColorForView1:) cancelSelector:@selector(colorChooserCancel)];
     colorChooser.currentColor = self.color1.backgroundColor;
+    colorChooser.title = @"Farbe wählen";
+    colorChooser.alphaText = @"Transparenz";
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        colorChooser.modalPresentationStyle = UIModalPresentationFormSheet;
+    }
     [self presentModalViewController:colorChooser animated:YES];
     [colorChooser release];
 }
@@ -77,6 +83,10 @@
 - (IBAction)chooseColor2:(id)sender {
     ArsColorChooserViewController *colorChooser = [[ArsColorChooserViewController alloc] initWithDelegate:self colorChosenSelector:@selector(setBackgroundColorForView2:) cancelSelector:@selector(colorChooserCancel)];
     colorChooser.currentColor = self.color2.backgroundColor;
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        colorChooser.modalPresentationStyle = UIModalPresentationFormSheet;
+    }
     [self presentModalViewController:colorChooser animated:YES];
     [colorChooser release];
 }
@@ -84,6 +94,10 @@
 - (IBAction)chooseColor3:(id)sender {
     ArsColorChooserViewController *colorChooser = [[ArsColorChooserViewController alloc] initWithDelegate:self colorChosenSelector:@selector(setBackgroundColorForView3:) cancelSelector:@selector(colorChooserCancel)];
     colorChooser.currentColor = self.color3.backgroundColor;
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        colorChooser.modalPresentationStyle = UIModalPresentationFormSheet;
+    }
     [self presentModalViewController:colorChooser animated:YES];
     [colorChooser release];
 }
@@ -91,6 +105,10 @@
 - (IBAction)chooseColor4:(id)sender {
     ArsColorChooserViewController *colorChooser = [[ArsColorChooserViewController alloc] initWithDelegate:self colorChosenSelector:@selector(setBackgroundColorForView4:) cancelSelector:@selector(colorChooserCancel)];
     colorChooser.currentColor = self.color4.backgroundColor;
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        colorChooser.modalPresentationStyle = UIModalPresentationFormSheet;
+    }
     [self presentModalViewController:colorChooser animated:YES];
     [colorChooser release];
 }
@@ -103,17 +121,17 @@
 -(void) setBackgroundColorForView2:(UIColor *)color
 {
     self.color2.backgroundColor = color;
-        [self dismissModalViewControllerAnimated:YES];
+    [self dismissModalViewControllerAnimated:YES];
 }
 -(void) setBackgroundColorForView3:(UIColor *)color
 {
     self.color3.backgroundColor = color;
-        [self dismissModalViewControllerAnimated:YES];
+    [self dismissModalViewControllerAnimated:YES];
 }
 -(void) setBackgroundColorForView4:(UIColor *)color
 {
     self.color4.backgroundColor = color;
-        [self dismissModalViewControllerAnimated:YES];
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 -(void) colorChooserCancel

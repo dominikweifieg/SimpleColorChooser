@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B44DF36A13FD3BDC0075640C /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = B44DF36813FD3BDC0075640C /* marker.png */; };
-		B44DF36B13FD3BDC0075640C /* marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B44DF36913FD3BDC0075640C /* marker@2x.png */; };
 		B44DF37513FD3ED30075640C /* UIColor-Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = B44DF37213FD3ED30075640C /* UIColor-Expanded.m */; };
 		B44DF37613FD3ED30075640C /* UIColor-HSVAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B44DF37413FD3ED30075640C /* UIColor-HSVAdditions.m */; };
 		B44DF37913FD47F20075640C /* current_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = B44DF37713FD47F10075640C /* current_marker.png */; };
@@ -38,8 +36,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B44DF36813FD3BDC0075640C /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
-		B44DF36913FD3BDC0075640C /* marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker@2x.png"; sourceTree = "<group>"; };
 		B44DF37113FD3ED30075640C /* UIColor-Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor-Expanded.h"; sourceTree = "<group>"; };
 		B44DF37213FD3ED30075640C /* UIColor-Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor-Expanded.m"; sourceTree = "<group>"; };
 		B44DF37313FD3ED30075640C /* UIColor-HSVAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor-HSVAdditions.h"; sourceTree = "<group>"; };
@@ -172,8 +168,6 @@
 				B44DF37213FD3ED30075640C /* UIColor-Expanded.m */,
 				B44DF37313FD3ED30075640C /* UIColor-HSVAdditions.h */,
 				B44DF37413FD3ED30075640C /* UIColor-HSVAdditions.m */,
-				B44DF36813FD3BDC0075640C /* marker.png */,
-				B44DF36913FD3BDC0075640C /* marker@2x.png */,
 				B4D77C1313FB6BD50015F766 /* ArsColorChooserViewController.h */,
 				B4D77C1413FB6BD50015F766 /* ArsColorChooserViewController.m */,
 				B4D77C1513FB6BD50015F766 /* ArsColorChooserViewController.xib */,
@@ -233,8 +227,6 @@
 				B4D77C0513FB68470015F766 /* SimpleColorChooserViewController.xib in Resources */,
 				B4D77C1713FB6BD50015F766 /* ArsColorChooserViewController.xib in Resources */,
 				B4BD69CD13FB92D000BB2C9F /* MainWindow-iPad.xib in Resources */,
-				B44DF36A13FD3BDC0075640C /* marker.png in Resources */,
-				B44DF36B13FD3BDC0075640C /* marker@2x.png in Resources */,
 				B44DF37913FD47F20075640C /* current_marker.png in Resources */,
 				B44DF37A13FD47F20075640C /* current_marker@2x.png in Resources */,
 				B44DF37D13FD49380075640C /* SimpleColorChooserViewController~iPad.xib in Resources */,

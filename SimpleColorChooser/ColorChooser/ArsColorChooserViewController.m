@@ -21,17 +21,20 @@
 @synthesize choosenColor;
 @synthesize hueImage;
 @synthesize hueSelector;
-@synthesize currentColorView;
+@synthesize titleBar;
 @synthesize newColorView;
 @synthesize theColorChooser;
+@synthesize colorChooserFrame;
+@synthesize colorChooserLayer;
 @synthesize alphaLabel;
 @synthesize alphaSlider;
 @synthesize newMarker;
-@synthesize currentMarker;
 
 @synthesize delegate;
 @synthesize colorChosenSelector;
 @synthesize cancelSelector;
+
+@synthesize alphaText;
 
 @synthesize hue;
 @synthesize value;
@@ -96,6 +99,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.titleBar.topItem.title = self.title;
+    
+    if (self.alphaText) {
+        self.alphaLabel.text = self.alphaText;
+    }
     
     self.alpha = CGColorGetAlpha(self.currentColor.CGColor);
     self.alphaSlider.value = self.alpha;
@@ -106,14 +114,12 @@
     
     self.hue = self.currentColor.hue;
     
-    CALayer *colorChooserLayer = [[CALayer alloc] init];
+    self.colorChooserLayer = [[CALayer alloc] init];
     
     [self.theColorChooser.layer addSublayer:colorChooserLayer];
     colorChooserLayer.frame = CGRectMake(0, 0, self.theColorChooser.layer.bounds.size.width, self.theColorChooser.layer.bounds.size.height);
     colorChooserLayer.delegate = self;
     [colorChooserLayer setNeedsDisplay];
-    
-    [colorChooserLayer release];
 }
 
 - (void)positionHueSelector {
@@ -126,7 +132,6 @@
 }
 - (void) viewWillAppear:(BOOL)animated
 {
-    self.currentColorView.backgroundColor = self.currentColor;
     self.choosenColor = self.currentColor;
     self.newColorView.backgroundColor = self.choosenColor;
     
@@ -155,13 +160,14 @@
     [self setAlphaLabel:nil];
     [self setAlphaSlider:nil];
     [self setNewMarker:nil];
-    [self setCurrentMarker:nil];
-    [self setCurrentColorView:nil];
     [self setNewColorView:nil];
     [self setHueImage:nil];
     [self setHueSelector:nil];
+    self.colorChooserLayer.delegate = nil;
+    [self setTheColorChooser:nil];
+    [self setColorChooserFrame:nil];
+    [self setTitleBar:nil];
     [super viewDidUnload];
-
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -170,9 +176,44 @@
     return YES;
 }
 
--(void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration
 {
-    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    if (UIInterfaceOrientationIsLandscape(interfaceOrientation)) {       
+        CGRect frame = self.colorChooserFrame.frame;
+        frame.origin = CGPointMake(10, 58);
+        self.colorChooserFrame.frame = frame;
+        
+        frame = self.hueImage.frame;
+        frame.origin = CGPointMake(250, 58);
+        self.hueImage.frame = frame;
+        
+        frame = self.alphaLabel.frame;
+        frame.origin = CGPointMake(317, 95);
+        self.alphaLabel.frame = frame;
+        
+        frame = self.alphaSlider.frame;
+        frame.origin = CGPointMake(248, 125);
+        self.alphaSlider.frame = frame;
+    }
+    else
+    {
+        CGRect frame = self.colorChooserFrame.frame;
+        frame.origin = CGPointMake(49, 81);
+        self.colorChooserFrame.frame = frame;
+        
+        frame = self.hueImage.frame;
+        frame.origin = CGPointMake(50, 326);
+        self.hueImage.frame = frame;
+        
+        frame = self.alphaLabel.frame;
+        frame.origin = CGPointMake(117, 373);
+        self.alphaLabel.frame = frame;
+        
+        frame = self.alphaSlider.frame;
+        frame.origin = CGPointMake(48, 402);
+        self.alphaSlider.frame = frame;
+    }
+    [self positionHueSelector];
     [self setCurrentColorMarker];
 }
 
@@ -199,11 +240,7 @@
     
     [UIView beginAnimations:@"SetCurrentMarker" context:nil];
     CGPoint pos = [self.view convertPoint:CGPointMake(x, y - 20) fromView:self.theColorChooser];
-    self.currentMarker.center = pos;
-    
-    if (self.choosenColor == self.currentColor) {
-        self.newMarker.center = pos;
-    }
+    self.newMarker.center = pos;
     [UIView commitAnimations];
 }
 
@@ -219,7 +256,7 @@
         }
         self.hue = p.x / self.hueImage.bounds.size.width;
         [self positionHueSelector];
-        [[[self.theColorChooser.layer sublayers] objectAtIndex:0] setNeedsDisplay];
+        [colorChooserLayer setNeedsDisplay];
         self.choosenColor = [UIColor colorWithHue:self.hue saturation:self.saturation brightness:self.value alpha:self.alpha];
         self.newColorView.backgroundColor = self.choosenColor;
     }
@@ -256,13 +293,14 @@
 }
                              
 - (void)dealloc {
-    [alphaLabel release];
-    [alphaSlider release];
-    [newMarker release];
-    [currentMarker release];
-    [hueImage release];
-    [hueSelector release];
-    [self.choosenColor release];
+    colorChooserLayer.delegate = nil;
+    [colorChooserLayer release];
+    [currentColor release];
+    [choosenColor release];
+    [delegate release];
+    [colorChooserFrame release];
+    [alphaText release];
     [super dealloc];
 }
+
 @end

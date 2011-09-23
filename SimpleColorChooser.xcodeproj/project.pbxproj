@@ -33,6 +33,7 @@
 		B4D77C0513FB68470015F766 /* SimpleColorChooserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D77C0313FB68470015F766 /* SimpleColorChooserViewController.xib */; };
 		B4D77C1613FB6BD50015F766 /* ArsColorChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D77C1413FB6BD50015F766 /* ArsColorChooserViewController.m */; };
 		B4D77C1713FB6BD50015F766 /* ArsColorChooserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D77C1513FB6BD50015F766 /* ArsColorChooserViewController.xib */; };
+		B4E259DC142C91A700A2EDC9 /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = B4E259DB142C91A700A2EDC9 /* README.textile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		B4D77C1313FB6BD50015F766 /* ArsColorChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArsColorChooserViewController.h; sourceTree = "<group>"; };
 		B4D77C1413FB6BD50015F766 /* ArsColorChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArsColorChooserViewController.m; sourceTree = "<group>"; };
 		B4D77C1513FB6BD50015F766 /* ArsColorChooserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArsColorChooserViewController.xib; sourceTree = "<group>"; };
+		B4E259DB142C91A700A2EDC9 /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		B4D77BDC13FB68450015F766 = {
 			isa = PBXGroup;
 			children = (
+				B4E259DB142C91A700A2EDC9 /* README.textile */,
 				B4D77BF113FB68460015F766 /* SimpleColorChooser */,
 				B4D77BEA13FB68460015F766 /* Frameworks */,
 				B4D77BE813FB68460015F766 /* Products */,
@@ -238,6 +241,7 @@
 				B45C68F9140E0B0B00A0EC62 /* hsv~iPad.png in Resources */,
 				B45C68FD140E125E00A0EC62 /* hue_selector.png in Resources */,
 				B45C68FE140E125E00A0EC62 /* hue_selector@2x.png in Resources */,
+				B4E259DC142C91A700A2EDC9 /* README.textile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
